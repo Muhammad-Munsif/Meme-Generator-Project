@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator | Frontend Fun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <header class="bg-purple-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-center">Meme Generator</h1>
+            <p class="text-center mt-2 text-purple-200">Create hilarious memes in seconds!</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Meme Editor Section -->
+            <div class="w-full lg:w-2/3">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Meme Editor</h2>
+                    
+                    <!-- Canvas for meme -->
+                    <div class="relative mb-6">
+                        <canvas id="memeCanvas" class="w-full max-w-full border border-gray-300 rounded-lg"></canvas>
+                        <div id="downloadBtn" class="absolute top-2 right-2 bg-purple-600 text-white p-2 rounded-full cursor-pointer hover:bg-purple-700 transition">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Controls -->
+                    <div class="space-y-4">
+                        <!-- Image URL Input -->
+                        <div>
+                            <label for="imageUrl" class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="imageUrl" placeholder="Paste image URL or select from templates" 
+                                    class="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <button id="loadImageBtn" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 transition">
+                                    Load
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Top Text Input -->
+                        <div>
+                            <label for="topText" class="block text-sm font-medium text-gray-700 mb-1">Top Text</label>
+                            <input type="text" id="topText" placeholder="Enter top text" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        
+                        <!-- Bottom Text Input -->
+                        <div>
+                            <label for="bottomText" class="block text-sm font-medium text-gray-700 mb-1">Bottom Text</label>
+                            <input type="text" id="bottomText" placeholder="Enter bottom text" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        
+                        <!-- Text Style Controls -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="textColor" class="block text-sm font-medium text-gray-700 mb-1">Text Color</label>
+                                <input type="color" id="textColor" value="#ffffff" 
+                                    class="w-full h-10 cursor-pointer">
+                            </div>
+                            <div>
+                                <label for="fontSize" class="block text-sm font-medium text-gray-700 mb-1">Font Size</label>
+                                <input type="range" id="fontSize" min="10" max="100" value="40" 
+                                    class="w-full">
+                                <span id="fontSizeValue" class="text-sm text-gray-600">40px</span>
+                            </div>
+                            <div>
+                                <label for="fontFamily" class="block text-sm font-medium text-gray-700 mb-1">Font Family</label>
+                                <select id="fontFamily" class="w-full px-3 py-2 border border-gray-300 rounded-md">
+                                    <option value="Impact">Impact</option>
+                                    <option value="Arial">Arial</option>
+                                    <option value="Comic Sans MS">Comic Sans</option>
+                                    <option value="Verdana">Verdana</option>
+                                    <option value="Courier New">Courier New</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="textStroke" class="block text-sm font-medium text-gray-700 mb-1">Text Outline</label>
+                                <input type="range" id="textStroke" min="0" max="10" value="2" 
+                                    class="w-full">
+                                <span id="textStrokeValue" class="text-sm text-gray-600">2px</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Generate Button -->
+                        <button id="generateBtn" class="w-full bg-purple-600 text-white py-3 rounded-md font-semibold hover:bg-purple-700 transition">
+                            Generate Meme
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Templates Section -->
+            <div class="w-full lg:w-1/3">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Popular Templates</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3" id="templateGallery">
+                        <!-- Templates will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Recent Memes Section -->
+                <div class="bg-white rounded-lg shadow-md p-4 mt-6">
+                    <h2 class="text-xl font-semibold mb-4 text-gray-800">Your Recent Memes</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3" id="recentMemes">
+                        <!-- Recent memes will be loaded here by JavaScript -->
+                        <p class="text-gray-500 col-span-full text-center py-4">No recent memes yet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>Made with by Frontend Dev</p>
+            <p class="text-gray-400 text-sm mt-2">© 2025 Meme Generator. All memes belong to their respective owners.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
