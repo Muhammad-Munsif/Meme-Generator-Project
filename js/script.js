@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Canvas setup
   const canvas = document.getElementById("memeCanvas");
   const ctx = canvas.getContext("2d");
-
   // Input elements
   const imageUrlInput = document.getElementById("imageUrl");
   const loadImageBtn = document.getElementById("loadImageBtn");
@@ -18,29 +17,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const downloadBtn = document.getElementById("downloadBtn");
   const templateGallery = document.getElementById("templateGallery");
   const recentMemesContainer = document.getElementById("recentMemes");
-
   // State
   let currentImage = null;
   let recentMemes = JSON.parse(localStorage.getItem("recentMemes")) || [];
-
   // Initialize
   setupCanvas();
   loadTemplates();
   loadRecentMemes();
-
   // Event listeners
   loadImageBtn.addEventListener("click", loadImageFromUrl);
   generateBtn.addEventListener("click", generateMeme);
   downloadBtn.addEventListener("click", downloadMeme);
-
   fontSizeInput.addEventListener("input", function () {
     fontSizeValue.textContent = `${this.value}px`;
   });
-
   textStrokeInput.addEventListener("input", function () {
     textStrokeValue.textContent = `${this.value}px`;
   });
-
   // Functions
   function setupCanvas() {
     // Set canvas size while maintaining aspect ratio
@@ -208,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
             `;
-
       templateElement.addEventListener("click", () => {
         imageUrlInput.value = template.url;
         loadImageFromUrl();
