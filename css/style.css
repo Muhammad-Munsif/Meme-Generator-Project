@@ -5,34 +5,28 @@ body {
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
 #memeCanvas {
   background-color: #f3f4f6;
   max-height: 500px;
   object-fit: contain;
 }
-
 /* Custom scrollbar for template gallery */
 #templateGallery {
   scrollbar-width: thin;
   scrollbar-color: #9ca3af #e5e7eb;
 }
-
 #templateGallery::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
 #templateGallery::-webkit-scrollbar-track {
   background: #e5e7eb;
   border-radius: 4px;
 }
-
 #templateGallery::-webkit-scrollbar-thumb {
   background-color: #9ca3af;
   border-radius: 4px;
 }
-
 /* Animation for meme generation */
 @keyframes pulse {
   0% {
@@ -45,11 +39,9 @@ body {
     transform: scale(1);
   }
 }
-
 .meme-pulse {
   animation: pulse 0.3s ease-in-out;
 }
-
 /* Responsive adjustments */
 @media (max-width: 640px) {
   #memeCanvas {
