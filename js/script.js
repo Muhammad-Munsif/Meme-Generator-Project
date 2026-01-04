@@ -1,4 +1,4 @@
-<script>
+
     document.addEventListener("DOMContentLoaded", function () {
       // Theme toggle functionality
       const themeToggle = document.getElementById("themeToggle");
@@ -475,4 +475,4 @@
         }
       });
     });
-  </script>
+  
