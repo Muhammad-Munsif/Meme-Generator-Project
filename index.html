@@ -13,12 +13,19 @@
 <body class="min-h-screen">
   <!-- Animated background elements -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div class="absolute top-10 left-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-    <div class="absolute top-40 right-10 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-    <div class="absolute -bottom-20 left-1/2 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+    <div
+      class="absolute top-10 left-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+    </div>
+    <div
+      class="absolute top-40 right-10 w-64 h-64 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+    </div>
+    <div
+      class="absolute -bottom-20 left-1/2 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+    </div>
   </div>
 
-  <header class="relative z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-xl border-b border-white/20 dark:border-gray-700/20">
+  <header
+    class="relative z-10 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-xl border-b border-white/20 dark:border-gray-700/20">
     <div class="container mx-auto px-4 py-4 md:py-6">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="flex items-center space-x-3 mb-4 md:mb-0 mobile-text-center">
@@ -34,7 +41,7 @@
             </p>
           </div>
         </div>
-        
+
         <div class="flex items-center space-x-4 mobile-full md:w-auto mobile-stack">
           <div class="flex items-center space-x-2">
             <i class="fas fa-palette text-purple-500"></i>
@@ -42,9 +49,11 @@
           </div>
           <label class="relative inline-flex items-center cursor-pointer">
             <input type="checkbox" id="themeToggle" class="sr-only peer">
-            <div class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600"></div>
+            <div
+              class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 dark:peer-focus:ring-purple-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-purple-600">
+            </div>
           </label>
-          
+
           <!-- Stats counter -->
           <div class="hidden md:flex items-center space-x-2 px-3 py-1 bg-white/50 dark:bg-gray-800/50 rounded-lg">
             <i class="fas fa-fire text-orange-500"></i>
@@ -68,7 +77,7 @@
           <p class="text-2xl font-bold">Instant</p>
         </div>
       </div>
-      
+
       <div class="glass-card rounded-xl p-4 flex items-center space-x-3">
         <div class="p-3 bg-green-500/10 rounded-lg">
           <i class="fas fa-layer-group text-green-500 text-xl"></i>
@@ -78,7 +87,7 @@
           <p class="text-2xl font-bold" id="templateCount">8+</p>
         </div>
       </div>
-      
+
       <div class="glass-card rounded-xl p-4 flex items-center space-x-3">
         <div class="p-3 bg-purple-500/10 rounded-lg">
           <i class="fas fa-share-alt text-purple-500 text-xl"></i>
@@ -98,29 +107,37 @@
             <h2 class="text-2xl md:text-3xl font-bold gradient-text flex items-center">
               <i class="fas fa-edit mr-3"></i>Meme Editor
             </h2>
-            <button id="quickHelp" class="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition">
+            <button id="quickHelp"
+              class="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition">
               <i class="fas fa-question-circle text-purple-600 dark:text-purple-400"></i>
             </button>
           </div>
 
           <!-- Canvas Container -->
           <div class="relative mb-8">
-            <div class="relative overflow-hidden rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-2 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+            <div
+              class="relative overflow-hidden rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 p-2 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
               <canvas id="memeCanvas" class="w-full max-w-full rounded-xl shadow-2xl"></canvas>
-              
+
               <!-- Canvas controls overlay -->
               <div class="absolute top-4 right-4 flex space-x-2">
-                <button id="downloadBtn" class="p-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" title="Download Meme">
+                <button id="downloadBtn"
+                  class="p-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                  title="Download Meme">
                   <i class="fas fa-download"></i>
                 </button>
-                <button id="shareBtn" class="p-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" title="Share Meme">
+                <button id="shareBtn"
+                  class="p-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                  title="Share Meme">
                   <i class="fas fa-share-alt"></i>
                 </button>
-                <button id="copyBtn" class="p-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110" title="Copy to Clipboard">
+                <button id="copyBtn"
+                  class="p-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                  title="Copy to Clipboard">
                   <i class="fas fa-copy"></i>
                 </button>
               </div>
-              
+
               <!-- Canvas preview text -->
               <div id="canvasPlaceholder" class="absolute inset-0 flex flex-col items-center justify-center">
                 <i class="fas fa-image text-6xl text-gray-400 mb-4"></i>
@@ -128,11 +145,12 @@
                 <p class="text-gray-400 text-sm mt-2">Upload an image or choose a template to begin</p>
               </div>
             </div>
-            
+
             <!-- Progress bar -->
             <div id="progressBar" class="hidden mt-4">
               <div class="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                <div id="progressFill" class="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"></div>
+                <div id="progressFill"
+                  class="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"></div>
               </div>
               <p class="text-center text-sm text-gray-500 mt-2">Processing your meme...</p>
             </div>
@@ -147,14 +165,16 @@
               <div class="flex-1">
                 <div class="relative">
                   <i class="fas fa-link absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                  <input type="text" id="imageUrl" placeholder="Paste image URL or choose from templates below" 
-                         class="modern-input pl-10 w-full">
+                  <input type="text" id="imageUrl" placeholder="Paste image URL or choose from templates below"
+                    class="modern-input pl-10 w-full">
                 </div>
               </div>
-              <button id="uploadBtn" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+              <button id="uploadBtn"
+                class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
                 <i class="fas fa-upload mr-2"></i>Upload
               </button>
-              <button id="loadImageBtn" class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+              <button id="loadImageBtn"
+                class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
                 <span id="loadBtnText">Load</span>
                 <span id="loadBtnSpinner" class="loading-dots hidden ml-2">
                   <span></span><span></span><span></span>
@@ -169,20 +189,20 @@
               <label for="topText" class="block text-sm font-semibold mb-2 flex items-center">
                 <i class="fas fa-arrow-up mr-2 text-green-500"></i>Top Text
               </label>
-              <input type="text" id="topText" placeholder="Enter hilarious top text..." 
-                     class="modern-input w-full" maxlength="50">
+              <input type="text" id="topText" placeholder="Enter hilarious top text..." class="modern-input w-full"
+                maxlength="50">
               <div class="flex justify-between mt-2">
                 <span class="text-xs text-gray-500">Make it funny!</span>
                 <span id="topTextCounter" class="text-xs text-gray-500">0/50</span>
               </div>
             </div>
-            
+
             <div class="glass-card p-4 rounded-xl border border-white/10">
               <label for="bottomText" class="block text-sm font-semibold mb-2 flex items-center">
                 <i class="fas fa-arrow-down mr-2 text-red-500"></i>Bottom Text
               </label>
-              <input type="text" id="bottomText" placeholder="Enter epic bottom text..." 
-                     class="modern-input w-full" maxlength="50">
+              <input type="text" id="bottomText" placeholder="Enter epic bottom text..." class="modern-input w-full"
+                maxlength="50">
               <div class="flex justify-between mt-2">
                 <span class="text-xs text-gray-500">The punchline goes here</span>
                 <span id="bottomTextCounter" class="text-xs text-gray-500">0/50</span>
@@ -200,17 +220,19 @@
                 <label class="block text-sm font-medium mb-2">Text Color</label>
                 <div class="flex items-center space-x-3">
                   <input type="color" id="textColor" value="#ffffff" class="w-full h-10 rounded-lg cursor-pointer">
-                  <button id="randomColor" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700">
+                  <button id="randomColor"
+                    class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700">
                     <i class="fas fa-dice text-purple-500"></i>
                   </button>
                 </div>
               </div>
-              
+
               <div>
-                <label class="block text-sm font-medium mb-2">Font Size: <span id="fontSizeValue" class="font-bold">40px</span></label>
+                <label class="block text-sm font-medium mb-2">Font Size: <span id="fontSizeValue"
+                    class="font-bold">40px</span></label>
                 <input type="range" id="fontSize" min="10" max="80" value="40" class="w-full">
               </div>
-              
+
               <div>
                 <label class="block text-sm font-medium mb-2">Font Family</label>
                 <select id="fontFamily" class="modern-input w-full">
@@ -222,16 +244,18 @@
                   <option value="Georgia">Georgia</option>
                 </select>
               </div>
-              
+
               <div>
-                <label class="block text-sm font-medium mb-2">Outline: <span id="textStrokeValue" class="font-bold">2px</span></label>
+                <label class="block text-sm font-medium mb-2">Outline: <span id="textStrokeValue"
+                    class="font-bold">2px</span></label>
                 <input type="range" id="textStroke" min="0" max="10" value="2" class="w-full">
               </div>
             </div>
-            
+
             <!-- Advanced Options -->
             <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-              <button id="toggleAdvanced" class="text-sm text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 flex items-center">
+              <button id="toggleAdvanced"
+                class="text-sm text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 flex items-center">
                 <i class="fas fa-chevron-down mr-1"></i> Advanced Options
               </button>
               <div id="advancedOptions" class="hidden mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -253,11 +277,13 @@
 
           <!-- Action Buttons -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <button id="generateBtn" class="btn-glow py-4 px-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+            <button id="generateBtn"
+              class="btn-glow py-4 px-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <i class="fas fa-bolt mr-2 group-hover:rotate-12 transition-transform"></i>
               <span>Generate Meme</span>
             </button>
-            <button id="randomBtn" class="btn-glow py-4 px-6 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
+            <button id="randomBtn"
+              class="btn-glow py-4 px-6 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
               <i class="fas fa-random mr-2 group-hover:rotate-180 transition-transform"></i>
               <span>Surprise Me!</span>
             </button>
@@ -273,13 +299,14 @@
             <h3 class="text-xl font-bold gradient-text flex items-center">
               <i class="fas fa-layer-group mr-2"></i>Popular Templates
             </h3>
-            <span class="text-sm px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full font-medium">
+            <span
+              class="text-sm px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full font-medium">
               Hot 🔥
             </span>
           </div>
-          
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 custom-scrollbar" 
-               style="max-height: 300px; overflow-y: auto;">
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 custom-scrollbar"
+            style="max-height: 300px; overflow-y: auto;">
             <!-- Templates loaded here -->
           </div>
         </div>
@@ -294,9 +321,9 @@
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>
-          
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 custom-scrollbar" 
-               style="max-height: 300px; overflow-y: auto;">
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 gap-3 custom-scrollbar"
+            style="max-height: 300px; overflow-y: auto;">
             <!-- Recent memes loaded here -->
             <div class="col-span-full text-center py-8">
               <i class="fas fa-ghost text-4xl text-gray-400 mb-3"></i>
@@ -345,7 +372,8 @@
     </div>
   </main>
 
-  <footer class="relative z-10 mt-12 py-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-t border-white/20 dark:border-gray-700/20">
+  <footer
+    class="relative z-10 mt-12 py-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-t border-white/20 dark:border-gray-700/20">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-6 md:mb-0 text-center md:text-left">
@@ -360,20 +388,23 @@
             No sign-up required!
           </p>
         </div>
-        
+
         <div class="flex space-x-6">
-          <a href="#" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:scale-110 transition-transform">
+          <a href="#"
+            class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:scale-110 transition-transform">
             <i class="fab fa-github text-xl"></i>
           </a>
-          <a href="#" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:scale-110 transition-transform">
+          <a href="#"
+            class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:scale-110 transition-transform">
             <i class="fab fa-twitter text-xl"></i>
           </a>
-          <a href="#" class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-red-100 dark:hover:bg-red-900/30 hover:scale-110 transition-transform">
+          <a href="#"
+            class="p-3 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-red-100 dark:hover:bg-red-900/30 hover:scale-110 transition-transform">
             <i class="fab fa-codepen text-xl"></i>
           </a>
         </div>
       </div>
-      
+
       <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 text-center">
         <p class="text-gray-500 dark:text-gray-400">
           Made with <i class="fas fa-heart text-red-500 mx-1"></i> by the community
@@ -402,6 +433,7 @@
   <!-- File Upload Modal -->
   <input type="file" id="fileInput" accept="image/*" class="hidden">
 
-  
+
 </body>
+
 </html>
